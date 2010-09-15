@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Employee:</b>
+  <%= @punch.employee.name_with_comma %>
+</p>
+
+<p>
+  <b>Shift in:</b>
+  <%= @punch.shift_in %>
+</p>
+
+<p>
+  <b>Break in:</b>
+  <%= @punch.break_in %>
+</p>
+
+<p>
+  <b>Break out:</b>
+  <%= @punch.break_out %>
+</p>
+
+<p>
+  <b>Shift out:</b>
+  <%= @punch.shift_out %>
+</p>
+
+<%= link_to 'Back', new_punch_path %>

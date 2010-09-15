@@ -1,0 +1,46 @@
+<%= form_for(@punch) do |f| %>
+  <% if @punch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
+
+      <ul>
+      <% @punch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employee %><br />
+    <%= select_tag(:employee, options_for_select ([['McMullen, Greg', 'McMullen, Greg'], 
+    											   ['Shanas, Jason', 2],
+    											   ['Montomery, Erin', 3],
+    											   ['Gregory, Heather', 4],
+    											   ['Beach, Jaimie', 5],
+    											   ['Beach, Casey', 6],
+    											   ['Osgood, Harley', 7],
+    											   ['Ward, Eldrick', 8],
+    											   ['Gwin, Brandon', 9]
+    											  ])) %>
+  </div>
+  <div class="field">
+    <%= f.label :shift_in %><br />
+    <%= f.check_box :shift_in %>
+  </div>
+  <div class="field">
+    <%= f.label :break_in %><br />
+    <%= f.check_box :break_in %>
+  </div>
+  <div class="field">
+    <%= f.label :break_out %><br />
+    <%= f.check_box :break_out %>
+  </div>
+  <div class="field">
+    <%= f.label :shift_out %><br />
+    <%= f.check_box :shift_out %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<% @employees.each do |emp| %>
+  <h3><%= emp.name_with_comma %></h3>
+  <table>
+    <tr>
+      <th>
+        Punch
+      </th>
+      <th>&nbsp;</th>
+      <th>
+        Time
+      </th>
+    </tr>
+  <% emp.punches.each do |ep| %>
+    <tr>
+      <td>
+        <%= "Shift Start" if ep.shift_in %>
+        <%= "Break Start" if ep.break_out %>
+        <%= "Break End" if ep.break_in %>
+        <%= "Shift End" if ep.shift_out %>
+      </td>
+      <td>&nbsp;</td>
+      <td><%= ep.created_at.localtime %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+
+<br />
+
+<%= link_to 'New Punch', new_punch_path %>
