@@ -12,11 +12,11 @@
     </tr>
   <% emp.punches.each do |ep| %>
     <tr>
-      <td>
-        <%= "Shift Start" if ep.shift_in %>
-        <%= "Break End" if ep.break_out %>
-        <%= "Break Start" if ep.break_in %>
-        <%= "Shift End" if ep.shift_out %>
+      <td align="center">
+        <%= "In" if ep.shift_in %>
+        <%= "+" if ep.break_out %>
+        <%= "-" if ep.break_in %>
+        <%= "Out" if ep.shift_out %>
       </td>
       <td>&nbsp;</td>
       <td><%= ep.created_at.localtime %></td>
