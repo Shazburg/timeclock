@@ -3,7 +3,7 @@ class PunchesController < ApplicationController
 	before_filter :authenticate, :except => [ :new, :show, :create ]
 	
   def index
-    @punches = Punch.all
+    @punches = Punch.all(:order => "punches.employee_id desc")
     @employees = Employee.all
   end
   
