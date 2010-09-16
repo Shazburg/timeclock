@@ -1,0 +1,15 @@
+- title "Employee"
+
+%p
+  %strong Last Name:
+  = @employee.last_name
+%p
+  %strong First Name:
+  = @employee.first_name
+
+%p
+  = link_to "Edit", edit_employee_path(@employee)
+  |
+  = link_to "Destroy", @employee, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", employees_path
