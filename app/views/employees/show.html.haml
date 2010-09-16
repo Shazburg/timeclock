@@ -6,6 +6,9 @@
 %p
   %strong First Name:
   = @employee.first_name
+%p
+  %strong Enabled:
+  = @employee.enabled
 
 %p
   = link_to "Edit", edit_employee_path(@employee)

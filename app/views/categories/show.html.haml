@@ -3,6 +3,9 @@
 %p
   %strong Name:
   = @category.name
+%p
+  %strong Enabled:
+  = @category.enabled
 
 %p
   = link_to "Edit", edit_category_path(@category)

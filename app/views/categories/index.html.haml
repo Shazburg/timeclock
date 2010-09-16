@@ -3,9 +3,11 @@
 %table
   %tr
     %th Name
+    %th Enabled?
   - for category in @categories
     %tr
       %td= category.name
+      %td= category.enabled
       %td= link_to 'Show', category
       %td= link_to 'Edit', edit_category_path(category)
       %td= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete

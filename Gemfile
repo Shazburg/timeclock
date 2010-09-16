@@ -14,7 +14,7 @@ gem 'haml'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'hirb'
-  gem 'unicorn'
+  gem 'mongrel'
   gem 'ruby-debug'
   gem 'autotest'
   gem 'autotest-rails-pure'

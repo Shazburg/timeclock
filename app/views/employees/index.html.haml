@@ -4,10 +4,12 @@
   %tr
     %th Last name
     %th First name
+    %th Enabled
   - for employee in @employees
     %tr
       %td= employee.last_name
       %td= employee.first_name
+      %td= employee.enabled
       %td= link_to 'Show', employee
       %td= link_to 'Edit', edit_employee_path(employee)
       %td= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete

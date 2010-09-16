@@ -10,18 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100916043204) do
+ActiveRecord::Schema.define(:version => 20100916031445) do
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "enable"
+    t.string  "name"
+    t.boolean "enabled"
   end
 
   create_table "employees", :force => true do |t|
-    t.string "last_name"
-    t.string "first_name"
+    t.string  "last_name"
+    t.string  "first_name"
+    t.boolean "enabled"
   end
 
   create_table "punches", :force => true do |t|
