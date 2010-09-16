@@ -4,6 +4,7 @@ class PunchesController < ApplicationController
 	
   def index
     @punches = Punch.all
+    @employees = Employee.all
   end
   
   def show

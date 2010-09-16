@@ -26,7 +26,7 @@
 
 # Set the way inline errors will be displayed.
 # Defaults to :sentence, valid options are :sentence, :list and :none
-Formtastic::SemanticFormBuilder.inline_errors = :none
+Formtastic::SemanticFormBuilder.inline_errors = :sentence
 
 # Set the method to call on label text to transform or format it for human-friendly
 # reading when formtastic is used without object. Defaults to :humanize.

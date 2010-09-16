@@ -1,17 +1,18 @@
 - title "Punches"
 
-%table
-  %tr
-    %th Employee
-    %th Category
-    %th Punch
-  - for punch in @punches
+- Employee.all.each do |emp|
+  %h3= emp.display_name
+  %table
     %tr
-      %td= punch.employee.display_name
-      %td= punch.category.name
-      %td= punch.in == 1 ? "In" : "Out"
-      %td= link_to 'Show', punch
-      %td= link_to 'Edit', edit_punch_path(punch)
-      %td= link_to 'Destroy', punch, :confirm => 'Are you sure?', :method => :delete
+      %th Category
+      %th Punch
+      %th Time
+      - emp.punches.each do |punch|
+        %tr
+          %td= punch.category.name
+          %td= punch.in == 1 ? "In" : "Out"
+          %td= punch.created_at.localtime
+          %td= link_to 'Edit', edit_punch_path(punch)
+          %td= link_to 'Destroy', punch, :confirm => 'Are you sure?', :method => :delete
 
 %p= link_to "New Punch", new_punch_path
