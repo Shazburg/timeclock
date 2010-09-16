@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+	before_filter :authenticate
+
   def index
     @employees = Employee.all()
   end

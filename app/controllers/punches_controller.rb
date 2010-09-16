@@ -1,4 +1,7 @@
 class PunchesController < ApplicationController
+	
+	before_filter :authenticate, :except => [ :new, :show, :create ]
+	
   def index
     @punches = Punch.all
   end
