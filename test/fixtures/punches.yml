@@ -1,9 +1,9 @@
 one:
   employee_id: 1
   category_id: 1
-  in: false
+  in: true
 
 two:
   employee_id: 1
-  category_id: 1
+  category_id: 2
   in: false
