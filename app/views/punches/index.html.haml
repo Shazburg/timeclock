@@ -1,0 +1,17 @@
+- title "Punches"
+
+%table
+  %tr
+    %th Employee
+    %th Category
+    %th In
+  - for punch in @punches
+    %tr
+      %td= punch.employee_id
+      %td= punch.category_id
+      %td= punch.in
+      %td= link_to 'Show', punch
+      %td= link_to 'Edit', edit_punch_path(punch)
+      %td= link_to 'Destroy', punch, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Punch", new_punch_path

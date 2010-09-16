@@ -10,11 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100915231523) do
+ActiveRecord::Schema.define(:version => 20100916031445) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "employees", :force => true do |t|
     t.string "last_name"
     t.string "first_name"
+  end
+
+  create_table "punches", :force => true do |t|
+    t.integer  "employee_id"
+    t.integer  "category_id"
+    t.boolean  "in"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

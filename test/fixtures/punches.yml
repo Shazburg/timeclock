@@ -1,0 +1,9 @@
+one:
+  employee_id: 1
+  category_id: 1
+  in: false
+
+two:
+  employee_id: 1
+  category_id: 1
+  in: false

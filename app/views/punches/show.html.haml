@@ -1,0 +1,18 @@
+- title "Punch"
+
+%p
+  %strong Employee:
+  = @punch.employee_id
+%p
+  %strong Category:
+  = @punch.category_id
+%p
+  %strong In:
+  = @punch.in
+
+%p
+  = link_to "Edit", edit_punch_path(@punch)
+  |
+  = link_to "Destroy", @punch, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", punches_path
