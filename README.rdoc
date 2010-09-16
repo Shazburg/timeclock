@@ -1,0 +1,14 @@
+=Timeclock
+
+This is a quick app for time tracking.
+
+Author::      Josh Matthews (mailto:jm@scrug.net)
+Copyright::   Copyright (c) 2010 Josh Matthews
+License::     MIT (http://www.opensource.org/licenses/mit-license.php)
+
+== Instructions
+
+* Open the app
+* Punch in for your shift
+* Go to work
+* Punch out and go home
