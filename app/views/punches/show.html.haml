@@ -8,6 +8,6 @@
   = @punch.category.name
 %p
   %strong Punched:
-  = @punch.in ? "In" : "Out"
+  = @punch.in == 1 ? "In" : "Out"
 %p
   = link_to "Next", new_punch_path

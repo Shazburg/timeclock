@@ -3,7 +3,7 @@ class CreatePunches < ActiveRecord::Migration
     create_table :punches do |t|
       t.integer :employee_id
       t.integer :category_id
-      t.boolean :in
+      t.integer :in
       t.timestamps
     end
   end

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20100916031445) do
   create_table "punches", :force => true do |t|
     t.integer  "employee_id"
     t.integer  "category_id"
-    t.boolean  "in"
+    t.integer  "in"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
