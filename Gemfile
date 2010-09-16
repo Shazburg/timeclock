@@ -17,5 +17,7 @@ group :development, :test do
   gem 'unicorn'
   gem 'ruby-debug'
   gem 'autotest'
+  gem 'autotest-rails-pure'
   gem 'nifty-generators'
+  gem 'mocha'
 end
