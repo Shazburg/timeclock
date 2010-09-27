@@ -1,5 +1,7 @@
 - title "Punches"
 
+%p= link_to "Add Employee", new_employee_path
+
 - Employee.all.each do |emp|
   %h3= emp.display_name
   %table

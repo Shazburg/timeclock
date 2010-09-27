@@ -14,6 +14,9 @@ gem 'haml'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'hirb'
+  gem 'wirble'
+  gem 'interactive_editor'
+  gem 'awesome_print', :require => 'ap'
   gem 'mongrel'
   gem 'ruby-debug'
   gem 'autotest'

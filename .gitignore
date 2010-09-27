@@ -1,5 +1,6 @@
 .DS_Store
 .bundle
+.snippets/*
 db/*.sqlite3
 log/*.log
 tmp/**/*
