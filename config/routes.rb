@@ -1,6 +1,4 @@
 Timeclock::Application.routes.draw do
-  resources :categories
-
   resources :punches
 
   resources :employees

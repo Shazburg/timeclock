@@ -6,12 +6,10 @@
   %h3= emp.display_name
   %table
     %tr
-      %th Category
       %th Punch
       %th Time
       - emp.punches.each do |punch|
         %tr
-          %td= punch.category.name
           %td= punch.in == 1 ? "In" : "Out"
           %td= punch.created_at.localtime
           %td= link_to 'Edit', edit_punch_path(punch)
