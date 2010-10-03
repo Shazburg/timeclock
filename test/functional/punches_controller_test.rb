@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class PunchesControllerTest < ActionController::TestCase
+
+  def setup
+    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:secret")
+  end
+
   def test_index
     get :index
     assert_template 'index'

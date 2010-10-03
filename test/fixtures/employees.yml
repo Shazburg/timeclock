@@ -1,11 +1,14 @@
 one:
-  last_name:
-  first_name: FirstName
+  last_name: Dent
+  first_name: Arthur
+  enabled: true
 
 two:
-  last_name: LastName
-  first_name:
+  last_name: Prefect
+  first_name: Ford
+  enabled: true
 
 three:
-  last_name: LastName
-  first_name: FirstName
+  last_name: Beeblebrox
+  first_name: Zaphod
+  enabled: false
