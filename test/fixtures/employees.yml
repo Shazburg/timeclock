@@ -1,14 +1,14 @@
-one:
+arthur:
   last_name: Dent
   first_name: Arthur
   enabled: true
 
-two:
+ford:
   last_name: Prefect
   first_name: Ford
   enabled: true
 
-three:
+zaphod:
   last_name: Beeblebrox
   first_name: Zaphod
   enabled: false
