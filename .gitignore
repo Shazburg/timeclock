@@ -1,6 +1,8 @@
 .DS_Store
 .bundle
+*.swp
 .snippets/*
 db/*.sqlite3
 log/*.log
 tmp/**/*
+config/deploy.rb
