@@ -10,12 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101005075954) do
-
-  create_table "categories", :force => true do |t|
-    t.string  "name"
-    t.boolean "enabled"
-  end
+ActiveRecord::Schema.define(:version => 20101005083734) do
 
   create_table "employees", :force => true do |t|
     t.string  "last_name"
@@ -25,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20101005075954) do
 
   create_table "punches", :force => true do |t|
     t.integer  "employee_id"
-    t.integer  "category_id"
     t.integer  "in"
     t.datetime "created_at"
     t.datetime "updated_at"
