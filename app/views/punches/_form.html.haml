@@ -3,6 +3,7 @@
   = f.inputs do
     = f.input :employee
     = f.input :in, :as => :radio, :label => "Punch", :collection => [["In", 1], ["Out", 2]]
+    = f.input :created_at if params[:action] == "edit"
   = f.buttons do
     = f.commit_button :label => "Punch It!"
 

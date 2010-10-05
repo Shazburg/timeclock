@@ -1,0 +1,8 @@
+<%= form_for @time_zone do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :time_zone %><br />
+    <%= f.time_zone_select :time_zone %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

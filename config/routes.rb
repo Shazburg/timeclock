@@ -1,4 +1,6 @@
 Timeclock::Application.routes.draw do
+  resources :time_zones
+
   resources :punches
   resources :employees
 

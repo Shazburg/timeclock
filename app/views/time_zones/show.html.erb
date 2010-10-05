@@ -1,0 +1,12 @@
+<% title "Time Zone" %>
+
+<p>
+  <strong>Time Zone:</strong>
+  <%= @time_zone.time_zone %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_time_zone_path(@time_zone) %> |
+  <%= link_to "Destroy", @time_zone, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", time_zones_path %>
+</p>

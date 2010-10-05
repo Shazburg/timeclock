@@ -1,6 +1,7 @@
 - title "Punches"
 
-%p= link_to "Add Employee", new_employee_path
+%p= link_to "New Employee", new_employee_path
+%p= link_to "New Punch", new_punch_path
 
 - Employee.find(:all, :order => "last_name").each do |emp|
   - next if !emp.enabled || !emp.punches.first
@@ -21,7 +22,7 @@
         - punch.in == 1 ? time_in = time_in + punch.created_at.to_f : time_out = time_out + punch.created_at.to_f
         %tr
           %td= punch.in == 1 ? "In" : "Out"
-          %td= punch.created_at.getlocal.strftime("%I:%M:%S %p")
+          %td= punch.created_at.strftime("%I:%M:%S %p")
           %td= link_to 'Edit', edit_punch_path(punch)
           %td= link_to 'Delete', punch, :confirm => 'Are you sure?', :method => :delete
     - time_today = (time_out - time_in)/60/60
@@ -29,4 +30,3 @@
     - total_time = total_time + (time_out - time_in)
   %h3= "#{(total_time).round/60/60} hours"
 
-%p= link_to "New Punch", new_punch_path
