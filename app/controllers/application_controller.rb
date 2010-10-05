@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   private
   
     def set_time_zone
-      Time.zone = TimeZone.first.time_zone
+      if TimeZone.first
+        Time.zone = TimeZone.first.time_zone
+      else
+        Time.zone = "UTC"
+      end
     end
   
     def authenticate
