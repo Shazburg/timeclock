@@ -10,4 +10,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def auth
+    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:secret")
+  end
 end

@@ -3,7 +3,7 @@ require 'test_helper'
 class EmployeesControllerTest < ActionController::TestCase
   
   def setup
-    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("admin:secret")
+    auth
   end
   
   def test_index

@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class TimeZonesControllerTest < ActionController::TestCase
+  
+  def setup
+    auth
+  end
+  
   def test_index
     get :index
     assert_template 'index'
