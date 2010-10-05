@@ -2,21 +2,31 @@
 
 %p= link_to "Add Employee", new_employee_path
 
-- Employee.find_each do |emp|
-  - time_in = 0
-  - time_out = 0
+- Employee.find(:all, :order => "last_name").each do |emp|
+  - next if !emp.enabled || !emp.punches.first
+  - total_time = 0
   %h2= emp.display_name
-  %table
-    %tr
-      %th Punch
-      %th Time
-      - emp.punches.find_each(:conditions => {:created_at => 1.week.ago.beginning_of_week...1.week.ago.end_of_week}) do |punch|
+  - 1.week.ago.beginning_of_week.to_date.upto(1.week.ago.end_of_week.to_date) do |date|
+    - punch_list = emp.punches.find(:all, :conditions => {:created_at => date.to_time..date.to_time+1.day})
+    - next if !punch_list.first
+    - time_in = 0
+    - time_out = 0
+    %h4= "#{Date::DAYNAMES[date.wday]} - #{date.month}/#{date.mday}"
+    %em= "Error: Missing Punch" if punch_list.count % 2 > 0
+    %table
+      / %tr
+      /   %th Punch
+      /   %th Time
+      - punch_list.each do |punch|
         - punch.in == 1 ? time_in = time_in + punch.created_at.to_f : time_out = time_out + punch.created_at.to_f
         %tr
           %td= punch.in == 1 ? "In" : "Out"
-          %td= punch.created_at.getlocal
+          %td= punch.created_at.getlocal.strftime("%I:%M:%S %p")
           %td= link_to 'Edit', edit_punch_path(punch)
-          %td= link_to 'Destroy', punch, :confirm => 'Are you sure?', :method => :delete
-  %h3= "#{(time_out - time_in).round/60/60} hours"
+          %td= link_to 'Delete', punch, :confirm => 'Are you sure?', :method => :delete
+    - time_today = (time_out - time_in)/60/60
+    = "#{time_today.round(3)} hours"
+    - total_time = total_time + (time_out - time_in)
+  %h3= "#{(total_time).round/60/60} hours"
 
 %p= link_to "New Punch", new_punch_path
