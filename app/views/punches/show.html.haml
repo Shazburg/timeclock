@@ -1,4 +1,4 @@
-- title "Punch"
+- title "Punch", false
 
 %p
   %strong Employee:
@@ -9,5 +9,3 @@
 %p
   %strong Time:
   = @punch.created_at.strftime("%I:%M:%S %p")
-%p
-  = link_to "Next", new_punch_path

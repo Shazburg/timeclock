@@ -1,4 +1,4 @@
-- title "Punches"
+- title "Timesheet", false
 
 - Employee.find(:all, :order => "last_name").each do |emp|
   - next if !emp.enabled || !emp.punches.first
@@ -24,4 +24,5 @@
     %h4.time_total_daily= "#{sprintf('%.3f', time_today)} hours"
     - total_time = total_time + (time_out - time_in)
   %h3.time_total_weekly= "#{sprintf('%.3f', total_time/60/60)} hours"
+  %hr
 

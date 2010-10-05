@@ -15,6 +15,7 @@
       
       %ul#menu
         = render "layouts/menu"
+      %br
     
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
