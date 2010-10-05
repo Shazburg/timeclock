@@ -81,6 +81,10 @@ table {
   color: #207d3a;
   margin-left: 15%; }
 
+#date_range {
+  text-align: center;
+  color: #00192a; }
+
 #menu {
   list-style: none;
   margin: 0;

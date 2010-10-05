@@ -1,5 +1,7 @@
 - title "Timesheet", false
 
+%h1#date_range= "#{1.week.ago.beginning_of_week.to_date} to #{1.week.ago.end_of_week.to_date}"
+
 - Employee.find(:all, :order => "last_name").each do |emp|
   - next if !emp.enabled || !emp.punches.first
   - total_time = 0
