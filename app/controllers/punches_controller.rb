@@ -4,7 +4,7 @@ class PunchesController < ApplicationController
 	
   def index
     @punches = Punch.all(:order => "punches.employee_id desc")
-    @employees = Employee.paginate(:page => params[:page], :order => "last_name", :conditions => {:enabled => true})
+    @employees = Employee.paginate(:page => params[:page], :order => "last_name, first_name", :conditions => {:enabled => true})
     # @employees = Employee.find(:all, :order => "last_name", :conditions => {:enabled => true})
     # @punches = Punch.paginate(:page => params[:page], :order => "punches.employee_id")
   end
